@@ -12,7 +12,7 @@ public class CustomItemProcessorTests {
 
 	@Test
 	void returnsPersonWithoutChangingIt() throws Exception {
-		Person person = new Person("1", "Aarav", "Sharma", "9078563421", "aarav@gmail.com");
+		Person person = new Person("1", "Sample", "One", "+1-202-555-0101", "sample1@example.com");
 
 		Person processedPerson = processor.process(person);
 

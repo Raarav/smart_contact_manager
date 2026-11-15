@@ -30,10 +30,10 @@ All endpoints are under `/api/contacts`. Create/update requests accept JSON:
 
 ```json
 {
-  "firstName": "Aarav",
-  "lastName": "Sharma",
-  "phone": "+1 555 0100",
-  "email": "aarav@example.com",
+  "firstName": "Sample",
+  "lastName": "One",
+  "phone": "+1-202-555-0101",
+  "email": "sample1@example.com",
   "company": "Example Inc.",
   "jobTitle": "Designer",
   "notes": "Met at the conference"

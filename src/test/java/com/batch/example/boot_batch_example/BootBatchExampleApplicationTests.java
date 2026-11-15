@@ -62,10 +62,10 @@ public class BootBatchExampleApplicationTests {
 				"1");
 
 		assertThat(person)
-				.containsEntry("FIRSTNAME", "aarav")
-				.containsEntry("LASTNAME", "sharma")
-				.containsEntry("CONTACT", "9078563421")
-				.containsEntry("EMAIL", "aarav@gmail.com");
+				.containsEntry("FIRSTNAME", "sample")
+				.containsEntry("LASTNAME", "one")
+				.containsEntry("CONTACT", "+1-202-555-0101")
+				.containsEntry("EMAIL", "sample1@example.com");
 	}
 
 }

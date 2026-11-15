@@ -51,9 +51,9 @@ public class ContactService {
             where.append("""
                      and (lower(firstName) like ? or lower(lastName) like ?
                           or lower(contact) like ? or lower(email) like ?
-                          or lower(company) like ? or lower(notes) like ?)
+                          or lower(company) like ? or lower(jobTitle) like ? or lower(notes) like ?)
                     """);
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 7; i++) {
                 parameters.add(pattern);
             }
         }

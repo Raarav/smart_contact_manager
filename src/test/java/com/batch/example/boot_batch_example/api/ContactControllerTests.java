@@ -218,7 +218,7 @@ public class ContactControllerTests {
 
         for (String term : new String[] {
                 "searchablefirst", "searchablelast", "searchablephone",
-                "searchable@example.com", "searchablecompany", "searchablenotes"
+                "searchable@example.com", "searchablecompany", "searchablejob", "searchablenotes"
         }) {
             mockMvc.perform(get("/api/contacts").param("search", term))
                     .andExpect(status().isOk())

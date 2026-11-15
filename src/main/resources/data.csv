@@ -1,6 +1,6 @@
 personId,firstName,lastName,contact,email
-1,aarav,sharma,9078563421,aarav@gmail.com
-2,nidhi,negi,8767905643,nidhi@gmail.com
-3,rahul,singh,897679065,rahul@gmail.com
-4,aakash,kumar,8767450976,aakash@gmail.com
-5,mehak,kumari,3298760211,mehak@gmail.com
+1,sample,one,+1-202-555-0101,sample1@example.com
+2,sample,two,+1-202-555-0102,sample2@example.com
+3,sample,three,+1-202-555-0103,sample3@example.com
+4,sample,four,+1-202-555-0104,sample4@example.com
+5,sample,five,+1-202-555-0105,sample5@example.com
