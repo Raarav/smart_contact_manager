@@ -22,6 +22,7 @@ bash mvnw verify
 
 JaCoCo writes the HTML report to `target/site/jacoco/index.html`.
 In IntelliJ, run `FullCoverageSuite` with **Run with Coverage** to collect coverage for every test class. Running an individual test class (for example `BootBatchExampleApplicationTests`) reports coverage for only that class's test run.
+To focus IntelliJ coverage on the API and model packages, run `ApiModelCoverageSuite` with **Run with Coverage**.
 
 ## Contact API
 
