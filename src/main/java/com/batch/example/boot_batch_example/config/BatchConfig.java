@@ -54,6 +54,7 @@ public class BatchConfig {
         return new FlatFileItemReaderBuilder<Person>()
             .name("itemReader")
             .resource(new ClassPathResource("data.csv"))
+            .linesToSkip(1)
             .delimited()
             .names("personId", "firstName", "lastName","contact", "email")
             .targetType(Person.class)
