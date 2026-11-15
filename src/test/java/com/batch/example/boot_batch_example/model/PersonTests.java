@@ -9,6 +9,12 @@ public class PersonTests {
     @Test
     void supportsNoArgumentConstructionAndAllProperties() {
         Person person = new Person();
+        assertThat(person.getPersonId()).isNull();
+        assertThat(person.getFirstName()).isNull();
+        assertThat(person.getLastName()).isNull();
+        assertThat(person.getContact()).isNull();
+        assertThat(person.getEmail()).isNull();
+
         person.setPersonId("person-1");
         person.setFirstName("Ada");
         person.setLastName("Lovelace");

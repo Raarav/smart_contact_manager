@@ -4,10 +4,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 import org.junit.jupiter.api.Test;
 
 public class ApiRecordTests {
+    private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
     @Test
     void contactRequestExposesItsValuesAndRecordValueSemantics() {
@@ -25,6 +30,18 @@ public class ApiRecordTests {
         assertThat(request.notes()).isEqualTo("Notes");
         assertThat(request).isEqualTo(equalRequest).hasSameHashCodeAs(equalRequest);
         assertThat(request.toString()).contains("Ada", "ada@example.com");
+    }
+
+    @Test
+    void contactRequestValidatesRequiredFieldsEmailAndMaximumLengths() {
+        ContactRequest invalidRequest = new ContactRequest(
+                " ", null, "", "not-an-email", null, null, "x".repeat(4001));
+
+        Set<ConstraintViolation<ContactRequest>> violations = validator.validate(invalidRequest);
+
+        assertThat(violations)
+                .extracting(violation -> violation.getPropertyPath().toString())
+                .contains("firstName", "phone", "email", "notes");
     }
 
     @Test
@@ -78,6 +95,14 @@ public class ApiRecordTests {
         assertThat(request.favorite()).isTrue();
         assertThat(request).isEqualTo(equalRequest).hasSameHashCodeAs(equalRequest);
         assertThat(request.toString()).contains("favorite=true");
+    }
+
+    @Test
+    void favoriteRequestRequiresAValue() {
+        assertThat(validator.validate(new FavoriteRequest(null)))
+                .extracting(violation -> violation.getPropertyPath().toString())
+                .containsExactly("favorite");
+        assertThat(validator.validate(new FavoriteRequest(false))).isEmpty();
     }
 
     @Test
