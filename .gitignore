@@ -1,6 +1,14 @@
 HELP.md
 target/
 /data/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+.gradle/
+.cache/
+dist/
+*.py[cod]
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
